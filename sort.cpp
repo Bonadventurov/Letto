@@ -1,4 +1,4 @@
-#include <sort.h>
+#include "sort.h"
 
 void SelSort(int size, int* ar){
      for(int i = 0; i < size; i++){

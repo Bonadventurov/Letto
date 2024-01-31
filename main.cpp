@@ -1,5 +1,6 @@
 #include <iostream>
-#include <sort.h>
+#include "sort.h"
+#include "work_array.h"
 
 int main(){
 
