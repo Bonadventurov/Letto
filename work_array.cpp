@@ -26,18 +26,18 @@ void swap(int* a, int* b){
     *b = temp;
 }
 
-void showElLine(int* ar, int size, char del = ' '){
+void showElLine(const int* ar, int size, char delimeter = ' '){
     for(int i = 0; i < size; i++){
-        std::cout << ar[i] << del;
+        std::cout << ar[i] << delimeter;
     }
     std::cout << std::endl;}
 
-void showElMatrix(const int* ar, int size, int col, char del = ' '){
+void showElMatrix(const int* ar, int size, int col, char delimeter = ' '){
 	int string = size / col;
     int a = 1;
     for(int j = 0; j < string; j++){
     	for(int i = 0;i < col; i++){
-        	std::cout << ar[i] << del;
+        	std::cout << ar[i] << delimeter;
         }
     std::cout << "\n";
     }

@@ -1,6 +1,6 @@
 #include "sort.h"
-
-void SelSort(int size, int* ar){
+#include "work_array.h"
+void SelectionSort(int size, int* ar){
      for(int i = 0; i < size; i++){
          int max = i;
          for(int j = 0; j < size; j++){
@@ -25,4 +25,44 @@ void SelSort(int size, int* ar){
          }
      }
 }
+
+void QuickSort(int* ar, int size){
+	int left = 0;
+	int right = size - 1;
+	int pivot = size / 2;
+	while(right > left){
+	while(ar[1] < ar[pivot] && left < pivot){left++;}
+	while(ar[right] >= ar[pivot] && right > pivot){right--;}
+	swap(&ar[left], &ar[right]);
+	if(pivot == left){pivot = right;}
+	}
+	if(size - pivot - 1 > 0){
+		QuickSort(&ar[pivot + 1], size - pivot - 1);
+	}
+	if(pivot > 0){
+		QuickSort(&ar[0], pivot);
+	}
+}
+
+void BubbleSort(int* ar, int size){
+	int i = 0;
+	int j = 0;
+	while(j < size){
+		while(i < size - 1 - j){
+			if(ar[i] < ar[i+1]){
+				i++;
+			}
+			else{
+				swap(&ar[i],&ar[i+1]);
+				i++;
+			}
+		}
+		i = 0;
+		j++;
+	}
+}
+
+
+
+
 
