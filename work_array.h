@@ -6,4 +6,5 @@ int getMin(const int* ar, int size);
 void swap(int* a, int* b);
 void showElLine(const int* ar, int size, char delimeter);
 void showElMatrix(const int*ar, int size, char delimeter);
+int CheckSort(int* ar, int size);
 #endif

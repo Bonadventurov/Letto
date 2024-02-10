@@ -44,3 +44,31 @@ void showElMatrix(const int* ar, int size, int col, char delimeter = ' '){
     std::cout << std::endl;
 }
 
+int CheckSort(int* ar, int size){
+	int ascending = 0;
+	int descending = 0;
+	int non_sort = 0;
+	for(int i = 0; i < size - 1; i++){
+		if(ar[i] <= ar[i+1]){
+			ascending++;
+		}
+		if(ar[i] >= ar[i+1]){
+			descending++;
+		}
+		else{
+			non_sort++;
+		}
+	}
+	if(ascending == size-1){
+		std::cout << 0 << std::endl;
+		return 0;
+	}
+	if(descending == size - 1){
+		std::cout << 1 << std::endl;
+		return 1;
+	}
+	else{
+		std::cout << -1 <<std::endl;
+		return -1;
+	}
+}

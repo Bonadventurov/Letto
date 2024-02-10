@@ -1,16 +1,9 @@
 #include "sort.h"
 #include "work_array.h"
-void SelectionSort(int size, int* ar){
-     for(int i = 0; i < size; i++){
-         int max = i;
-         for(int j = 0; j < size; j++){
-             if(ar[max]- ar[j] < 0){
-                max = j;
-             }
-         }
-             int temp = ar[i];
-             ar[i] = ar[max];
-             ar[max] = ar[i];
+void SelectionSort(int* ar, int size){ 
+	for(int i = 0; i < size; i++){
+    	int max = getMax(&ar[i], size - i);
+		swap(&ar[i],&ar[max]);
      }
  }
  
@@ -29,18 +22,25 @@ void SelectionSort(int size, int* ar){
 void QuickSort(int* ar, int size){
 	int left = 0;
 	int right = size - 1;
-	int pivot = size / 2;
-	while(right > left){
-	while(ar[1] < ar[pivot] && left < pivot){left++;}
-	while(ar[right] >= ar[pivot] && right > pivot){right--;}
-	swap(&ar[left], &ar[right]);
-	if(pivot == left){pivot = right;}
+	int pivot = ar[size / 2];
+	while(right >= left){
+		while(ar[left] < pivot){
+			left++;
+		}
+		while(ar[right] > pivot){
+			right--;
+		}
+		if(left <= right){
+			swap(&ar[left],&ar[right]);
+			left++;
+			right--;
+		}
 	}
-	if(size - pivot - 1 > 0){
-		QuickSort(&ar[pivot + 1], size - pivot - 1);
+	if(right > 0){
+		QuickSort(&ar[0], left);
 	}
-	if(pivot > 0){
-		QuickSort(&ar[0], pivot);
+	if(left < size){
+		QuickSort(&ar[left], size - left);
 	}
 }
 
