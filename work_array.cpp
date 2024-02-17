@@ -1,23 +1,31 @@
 #include "work_array.h"
 
 int getMax(const int* ar, int size){
-    int max = ar[0];
-    for(int i = 1; i < size; i++){
-        if(max - ar[i] < 0){
-            max = ar[i];
-        }
+	int left = 0;
+    int right = size - 1;
+    while(left != right){
+		if(ar[left] >= ar[right]){
+            right--;
+        }   
+        else{
+        	left++;
+   		}   
     }
-    return max;
+	return left;
 }
- 
+
 int getMin(const int* ar, int size){
-     int min = ar[0];
-     for(int i = 1; i < size; i++){
-         if(min - ar[i] > 0){
-            min = ar[i];
-        }
-    }
-    return min;
+	int left = 0;
+	int right = size - 1;
+	while(left != right){
+		if(ar[left] <= ar[right]){
+			right--;
+		}
+		else{
+			left++;
+		}
+	}
+    return left;
 }
 
 void swap(int* a, int* b){
