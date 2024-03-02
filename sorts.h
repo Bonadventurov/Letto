@@ -7,4 +7,5 @@ void InsertionSort(int* ar, int size);
 void QuickSort(int* ar, int size);
 void BubbleSort(int* ar, int size);
 void MergeSort(int* ar, int size);
+void CountSort(int* ar, int size);
 #endif
