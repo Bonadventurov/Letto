@@ -52,7 +52,7 @@ void showElMatrix(const int* ar, int size, int col, char delimeter = ' '){
     std::cout << std::endl;
 }
 
-int CheckSort(int* ar, int size){
+int CheckSorts(int* ar, int size){
 	int ascending = 0;
 	int descending = 0;
 	int non_sort = 0;
